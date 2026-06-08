@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.94SVN scan initiated Fri Jun  5 11:17:15 2026 as: nmap -p- -sV -sC -T4 -oA baicell_analysis/full_scan 192.168.22.200 -->
+<nmaprun scanner="nmap" args="nmap -p- -sV -sC -T4 -oA baicell_analysis/full_scan 192.168.22.200" start="1780651035" startstr="Fri Jun  5 11:17:15 2026" version="7.94SVN" xmloutputversion="1.05">
+<scaninfo type="connect" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="192.168.22.200" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<host starttime="1780651037" endtime="1780651195"><status state="up" reason="conn-refused" reason_ttl="0"/>
+<address addr="192.168.22.200" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><extraports state="closed" count="65531">
+<extrareasons reason="conn-refused" count="65531" proto="tcp" ports="1-110,112-442,444-7546,7548-27148,27150-65535"/>
+</extraports>
+<port protocol="tcp" portid="111"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="rpcbind" version="2-4" extrainfo="RPC #100000" method="probed" conf="10"/><script id="rpcinfo" output="&#xa;  program version    port/proto  service&#xa;  100000  2,3,4        111/tcp   rpcbind&#xa;  100000  2,3,4        111/udp   rpcbind&#xa;  100000  3,4          111/tcp6  rpcbind&#xa;  100000  3,4          111/udp6  rpcbind&#xa;"><table key="100000">
+<table key="tcp">
+<table key="version">
+<elem>2</elem>
+<elem>3</elem>
+<elem>4</elem>
+</table>
+<elem key="owner">superuser</elem>
+<elem key="addr">0.0.0.0</elem>
+<elem key="port">111</elem>
+</table>
+<table key="tcp6">
+<table key="version">
+<elem>3</elem>
+<elem>4</elem>
+</table>
+<elem key="owner">superuser</elem>
+<elem key="addr">::</elem>
+<elem key="port">111</elem>
+</table>
+<table key="udp">
+<table key="version">
+<elem>2</elem>
+<elem>3</elem>
+<elem>4</elem>
+</table>
+<elem key="owner">superuser</elem>
+<elem key="addr">0.0.0.0</elem>
+<elem key="port">111</elem>
+</table>
+<table key="local">
+<table key="version">
+<elem>3</elem>
+<elem>4</elem>
+</table>
+<elem key="addr">/run/rpcbind.sock</elem>
+<elem key="owner">superuser</elem>
+</table>
+<table key="udp6">
+<table key="version">
+<elem>3</elem>
+<elem>4</elem>
+</table>
+<elem key="owner">superuser</elem>
+<elem key="addr">::</elem>
+<elem key="port">111</elem>
+</table>
+</table>
+</script></port>
+<port protocol="tcp" portid="443"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="https" product="****************" servicefp="SF-Port443-TCP:V=7.94SVN%T=SSL%I=7%D=6/5%Time=6A22942F%P=x86_64-pc-linux-gnu%r(GetRequest,22AC,&quot;HTTP/1\.0\x20200\x20OK\r\nStrict-Transport-Security:\x20max-age=63072000;\x20includeSubDomains;\x20preload\r\nX-Frame-Options:\x20SAMEORIGIN\r\nX-XSS-Protection:\x201\r\nX-Download-Options:\x20noopen\r\nX-Permitted-Cross-Domain-Policies:\x20master-only\r\nReferrer-Policy:\x20no-referrer-when-downgrade\r\nContent-Security-Policy:\x20object-src\x20&apos;self&apos;\r\nCache-Control:\x20no-cache\r\nPragma:\x20no-cache\r\nContent-Length:\x208422\r\nConnection:\x20close\r\nDate:\x20Fri,\x2005\x20Jun\x202026\x2009:17:35\x20GMT\r\nServer:\x20\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\r\n\r\n\n&lt;!DOCTYPE\x20html&gt;\n&lt;head&gt;\n\t&lt;meta\x20charset=\&quot;utf-8\&quot;&gt;\n\t&lt;meta\x20http-equiv=\&quot;X-UA-Compatible\&quot;\x20content=\&quot;IE=edge\&quot;&gt;\n\t&lt;meta\x20name=\&quot;description\&quot;\x20content=\&quot;Gargoyle\x20Firmware\x20Webgui\x20for\x20router\x20management\.\&quot;&gt;\n\t&lt;meta\x20name=\&quot;viewport\&quot;\x20content=\&quot;width=device-width,\x20initial-scale=1\&quot;&gt;\n\t\n\t&lt;META\x20HTTP-EQUIV=\&quot;Pragma\&quot;\x20CONTENT=\&quot;no-cache\&quot;&gt;\n\t&lt;META\x20HTTP-EQUIV=\&quot;Cache-Control\&quot;\x20CONTENT=\&quot;no-cache\&quot;&gt;\n\t&lt;META\x20HTTP-EQUIV=\&quot;Expires\&quot;\x20CONTENT=\&quot;0\&quot;&gt;\n\t&lt;title&gt;\x20Management\x20Utility&lt;/title&gt;\n\n\t&lt;link\x20&quot;)%r(HTTPOptions,22AC,&quot;HTTP/1\.0\x20200\x20OK\r\nStrict-Transport-Security:\x20max-age=63072000;\x20includeSubDomains;\x20preload\r\nX-Frame-Options:\x20SAMEORIGIN\r\nX-XSS-Protection:\x201\r\nX-Download-Options:\x20noopen\r\nX-Permitted-Cross-Domain-Policies:\x20master-only\r\nReferrer-Policy:\x20no-referrer-when-downgrade\r\nContent-Security-Policy:\x20object-src\x20&apos;self&apos;\r\nCache-Control:\x20no-cache\r\nPragma:\x20no-cache\r\nContent-Length:\x208422\r\nConnection:\x20close\r\nDate:\x20Fri,\x2005\x20Jun\x202026\x2009:17:35\x20GMT\r\nServer:\x20\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\r\n\r\n\n&lt;!DOCTYPE\x20html&gt;\n&lt;head&gt;\n\t&lt;meta\x20charset=\&quot;utf-8\&quot;&gt;\n\t&lt;meta\x20http-equiv=\&quot;X-UA-Compatible\&quot;\x20content=\&quot;IE=edge\&quot;&gt;\n\t&lt;meta\x20name=\&quot;description\&quot;\x20content=\&quot;Gargoyle\x20Firmware\x20Webgui\x20for\x20router\x20management\.\&quot;&gt;\n\t&lt;meta\x20name=\&quot;viewport\&quot;\x20content=\&quot;width=device-width,\x20initial-scale=1\&quot;&gt;\n\t\n\t&lt;META\x20HTTP-EQUIV=\&quot;Pragma\&quot;\x20CONTENT=\&quot;no-cache\&quot;&gt;\n\t&lt;META\x20HTTP-EQUIV=\&quot;Cache-Control\&quot;\x20CONTENT=\&quot;no-cache\&quot;&gt;\n\t&lt;META\x20HTTP-EQUIV=\&quot;Expires\&quot;\x20CONTENT=\&quot;0\&quot;&gt;\n\t&lt;title&gt;\x20Management\x20Utility&lt;/title&gt;\n\n\t&lt;link\x20&quot;);" tunnel="ssl" method="probed" conf="10"/><script id="http-server-header" output="****************"><elem>****************</elem>
+</script><script id="tls-alpn" output="&#xa;  http/1.0&#xa;  http/1.1&#xa;  h2"><elem>http/1.0</elem>
+<elem>http/1.1</elem>
+<elem>h2</elem>
+</script><script id="ssl-cert" output="Subject: commonName=www.baicells.com/organizationName=Baicells/stateOrProvinceName=Beijing/countryName=CN&#xa;Not valid before: 2017-06-01T03:18:12&#xa;Not valid after:  2067-05-20T03:18:12"><table key="subject">
+<elem key="commonName">www.baicells.com</elem>
+<elem key="countryName">CN</elem>
+<elem key="localityName">Beijing</elem>
+<elem key="organizationName">Baicells</elem>
+<elem key="organizationalUnitName">eNB</elem>
+<elem key="stateOrProvinceName">Beijing</elem>
+</table>
+<table key="issuer">
+<elem key="commonName">www.baicells.com</elem>
+<elem key="countryName">CN</elem>
+<elem key="localityName">Beijing</elem>
+<elem key="organizationName">Baicells</elem>
+<elem key="organizationalUnitName">CA</elem>
+<elem key="stateOrProvinceName">Beijing</elem>
+</table>
+<table key="pubkey">
+<elem key="type">rsa</elem>
+<elem key="bits">1024</elem>
+<elem key="modulus">C3F66AB4647CE3EA07AA71FB4490016797D7A15A2EE218A7A803DEB7AD4A720AA9423315BDB3DB011E7F87E8C8152623323B328C4DA8A58A0E94DC100A26B70C1237BA8EF5071CC3DD5422877A15CFA663B904211D3C5F1B686CD1B03F16C13B67FE2F8B346E6E7BA0C4799473F014DF28E2B3CCD986E932FEC51720C8A880A7</elem>
+<elem key="exponent">65537</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="name">X509v3 Basic Constraints</elem>
+<elem key="value">CA:FALSE</elem>
+</table>
+<table>
+<elem key="name">Netscape Comment</elem>
+<elem key="value">OpenSSL Generated Certificate</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Key Identifier</elem>
+<elem key="value">2A:D1:1A:8C:F2:94:10:FF:AE:0D:62:B1:05:5E:00:3E:22:47:A6:9D</elem>
+</table>
+<table>
+<elem key="name">X509v3 Authority Key Identifier</elem>
+<elem key="value">39:E6:D5:A4:89:B9:2B:2F:7F:15:10:B9:9C:4A:F3:B4:6E:B1:AD:4A</elem>
+</table>
+</table>
+<elem key="sig_algo">sha256WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2017-06-01T03:18:12</elem>
+<elem key="notAfter">2067-05-20T03:18:12</elem>
+</table>
+<elem key="md5">49f2ed9f9f6e3980e610fdb56253dd83</elem>
+<elem key="sha1">365a85e6a5fb6fd134f4f4b5c3e88aa2856e26ee</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIICzDCCAjWgAwIBAgIBAjANBgkqhkiG9w0BAQsFADBsMQswCQYDVQQGEwJDTjEQ&#xa;MA4GA1UECAwHQmVpamluZzEQMA4GA1UEBwwHQmVpamluZzERMA8GA1UECgwIQmFp&#xa;Y2VsbHMxCzAJBgNVBAsMAkNBMRkwFwYDVQQDDBB3d3cuYmFpY2VsbHMuY29tMCAX&#xa;DTE3MDYwMTAzMTgxMloYDzIwNjcwNTIwMDMxODEyWjBtMQswCQYDVQQGEwJDTjEQ&#xa;MA4GA1UECAwHQmVpamluZzEQMA4GA1UEBwwHQmVpamluZzERMA8GA1UECgwIQmFp&#xa;Y2VsbHMxDDAKBgNVBAsMA2VOQjEZMBcGA1UEAwwQd3d3LmJhaWNlbGxzLmNvbTCB&#xa;nzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAw/ZqtGR84+oHqnH7RJABZ5fXoVou&#xa;4hinqAPet61KcgqpQjMVvbPbAR5/h+jIFSYjMjsyjE2opYoOlNwQCia3DBI3uo71&#xa;BxzD3VQih3oVz6ZjuQQhHTxfG2hs0bA/FsE7Z/4vizRubnugxHmUc/AU3yjis8zZ&#xa;huky/sUXIMiogKcCAwEAAaN7MHkwCQYDVR0TBAIwADAsBglghkgBhvhCAQ0EHxYd&#xa;T3BlblNTTCBHZW5lcmF0ZWQgQ2VydGlmaWNhdGUwHQYDVR0OBBYEFCrRGozylBD/&#xa;rg1isQVeAD4iR6adMB8GA1UdIwQYMBaAFDnm1aSJuSsvfxUQuZxK87Rusa1KMA0G&#xa;CSqGSIb3DQEBCwUAA4GBAJkCYq3aaW7aDxcm6wDbGL7E5ScLkS8+aKpoELg5GTyN&#xa;WP0KryOPHPHv4GZAXt6VmaZgLN5lsRYXuMxNjwQ/xZl/JkWIQozc9zB3krQhQ7Hb&#xa;v82mviWou0mIw+gksIQF1WLpI8kh+7dJlIoSWKjdi1Ik5dKmgIuQ0+J9a/IUrfdb&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script><script id="ssl-date" output="TLS randomness does not represent time"></script><script id="http-title" output=" Management Utility"><elem key="title"> Management Utility</elem>
+</script><script id="fingerprint-strings" output="&#xa;  GetRequest, HTTPOptions: &#xa;    HTTP/1.0 200 OK&#xa;    Strict-Transport-Security: max-age=63072000; includeSubDomains; preload&#xa;    X-Frame-Options: SAMEORIGIN&#xa;    X-XSS-Protection: 1&#xa;    X-Download-Options: noopen&#xa;    X-Permitted-Cross-Domain-Policies: master-only&#xa;    Referrer-Policy: no-referrer-when-downgrade&#xa;    Content-Security-Policy: object-src &apos;self&apos;&#xa;    Cache-Control: no-cache&#xa;    Pragma: no-cache&#xa;    Content-Length: 8422&#xa;    Connection: close&#xa;    Date: Fri, 05 Jun 2026 09:17:35 GMT&#xa;    Server: ****************&#xa;    &lt;!DOCTYPE html&gt;&#xa;    &lt;head&gt;&#xa;    &lt;meta charset=&quot;utf-8&quot;&gt;&#xa;    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;&#xa;    &lt;meta name=&quot;description&quot; content=&quot;Gargoyle Firmware Webgui for router management.&quot;&gt;&#xa;    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;&#xa;    &lt;META HTTP-EQUIV=&quot;Pragma&quot; CONTENT=&quot;no-cache&quot;&gt;&#xa;    &lt;META HTTP-EQUIV=&quot;Cache-Control&quot; CONTENT=&quot;no-cache&quot;&gt;&#xa;    &lt;META HTTP-EQUIV=&quot;Expires&quot; CONTENT=&quot;0&quot;&gt;&#xa;    &lt;title&gt; Management Utility&lt;/title&gt;&#xa;    &lt;link"><elem key="GetRequest, HTTPOptions">&#xa;    HTTP/1.0 200 OK&#xa;    Strict-Transport-Security: max-age=63072000; includeSubDomains; preload&#xa;    X-Frame-Options: SAMEORIGIN&#xa;    X-XSS-Protection: 1&#xa;    X-Download-Options: noopen&#xa;    X-Permitted-Cross-Domain-Policies: master-only&#xa;    Referrer-Policy: no-referrer-when-downgrade&#xa;    Content-Security-Policy: object-src &apos;self&apos;&#xa;    Cache-Control: no-cache&#xa;    Pragma: no-cache&#xa;    Content-Length: 8422&#xa;    Connection: close&#xa;    Date: Fri, 05 Jun 2026 09:17:35 GMT&#xa;    Server: ****************&#xa;    &lt;!DOCTYPE html&gt;&#xa;    &lt;head&gt;&#xa;    &lt;meta charset=&quot;utf-8&quot;&gt;&#xa;    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;&#xa;    &lt;meta name=&quot;description&quot; content=&quot;Gargoyle Firmware Webgui for router management.&quot;&gt;&#xa;    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;&#xa;    &lt;META HTTP-EQUIV=&quot;Pragma&quot; CONTENT=&quot;no-cache&quot;&gt;&#xa;    &lt;META HTTP-EQUIV=&quot;Cache-Control&quot; CONTENT=&quot;no-cache&quot;&gt;&#xa;    &lt;META HTTP-EQUIV=&quot;Expires&quot; CONTENT=&quot;0&quot;&gt;&#xa;    &lt;title&gt; Management Utility&lt;/title&gt;&#xa;    &lt;link</elem>
+</script></port>
+<port protocol="tcp" portid="7547"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="cwmp" servicefp="SF-Port7547-TCP:V=7.94SVN%I=7%D=6/5%Time=6A229430%P=x86_64-pc-linux-gnu%r(GetRequest,24,&quot;HTTP/1\.1\x20503\x20Service\x20Unavailable\r\n\r\n&quot;)%r(HTTPOptions,24,&quot;HTTP/1\.1\x20503\x20Service\x20Unavailable\r\n\r\n&quot;)%r(RTSPRequest,24,&quot;HTTP/1\.1\x20503\x20Service\x20Unavailable\r\n\r\n&quot;)%r(FourOhFourRequest,24,&quot;HTTP/1\.1\x20503\x20Service\x20Unavailable\r\n\r\n&quot;)%r(SIPOptions,24,&quot;HTTP/1\.1\x20503\x20Service\x20Unavailable\r\n\r\n&quot;);" method="table" conf="3"/><script id="fingerprint-strings" output="&#xa;  FourOhFourRequest, GetRequest, HTTPOptions, RTSPRequest, SIPOptions: &#xa;    HTTP/1.1 503 Service Unavailable"><elem key="FourOhFourRequest, GetRequest, HTTPOptions, RTSPRequest, SIPOptions">&#xa;    HTTP/1.1 503 Service Unavailable</elem>
+</script></port>
+<port protocol="tcp" portid="27149"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ssh" product="OpenSSH" version="9.4" extrainfo="protocol 2.0" method="probed" conf="10"><cpe>cpe:/a:openbsd:openssh:9.4</cpe></service><script id="ssh-hostkey" output="&#xa;  256 d3:93:f6:e6:ca:17:52:aa:3a:c0:56:ec:07:56:9b:ab (ECDSA)&#xa;  256 07:09:8b:97:3b:89:d1:e4:24:c1:64:c9:da:f6:f3:92 (ED25519)"><table>
+<elem key="type">ecdsa-sha2-nistp256</elem>
+<elem key="key">AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBK96ZNvriNcvD6Y+n+tmzw/n8OidN6BHG+f/ycVQtaGuwRxMhgAc/SuuNiTCm771ivaTt3wRCLhSsDPzEAx9mvw=</elem>
+<elem key="fingerprint">d393f6e6ca1752aa3ac056ec07569bab</elem>
+<elem key="bits">256</elem>
+</table>
+<table>
+<elem key="type">ssh-ed25519</elem>
+<elem key="key">AAAAC3NzaC1lZDI1NTE5AAAAIN4oJUfH85tcvc08KC+VuUI3/7QvifWw2YG3dzjbkF5S</elem>
+<elem key="fingerprint">07098b973b89d1e424c164c9daf6f392</elem>
+<elem key="bits">256</elem>
+</table>
+</script></port>
+</ports>
+<times srtt="1280" rttvar="337" to="100000"/>
+</host>
+<runstats><finished time="1780651195" timestr="Fri Jun  5 11:19:55 2026" summary="Nmap done at Fri Jun  5 11:19:55 2026; 1 IP address (1 host up) scanned in 159.51 seconds" elapsed="159.51" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>
