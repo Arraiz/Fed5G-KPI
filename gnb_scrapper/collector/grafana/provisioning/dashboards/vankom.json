@@ -1,0 +1,332 @@
+{
+  "__inputs": [],
+  "__requires": [],
+  "annotations": {
+    "list": []
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 1,
+  "id": null,
+  "links": [],
+  "panels": [
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 100,
+      "title": "Estado Vankom",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "PAD3349F0AAE9DF1D"
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 0,
+        "y": 1
+      },
+      "id": 1,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        }
+      },
+      "title": "Online Users",
+      "type": "stat",
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "PAD3349F0AAE9DF1D"
+          },
+          "query": "from(bucket: \"gnb_metrics\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r._measurement == \"vankom_summary\")\n  |> filter(fn: (r) => r.gnb_host == \"${gnb}\")\n  |> filter(fn: (r) => r._field == \"online_users_count\")\n  |> last()",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "PAD3349F0AAE9DF1D"
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 6,
+        "y": 1
+      },
+      "id": 2,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        }
+      },
+      "title": "Alarms Realtime",
+      "type": "stat",
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "PAD3349F0AAE9DF1D"
+          },
+          "query": "from(bucket: \"gnb_metrics\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r._measurement == \"vankom_summary\")\n  |> filter(fn: (r) => r.gnb_host == \"${gnb}\")\n  |> filter(fn: (r) => r._field == \"alarms_realtime_count\")\n  |> last()",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "PAD3349F0AAE9DF1D"
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 12,
+        "y": 1
+      },
+      "id": 3,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        }
+      },
+      "title": "Alarms History",
+      "type": "stat",
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "PAD3349F0AAE9DF1D"
+          },
+          "query": "from(bucket: \"gnb_metrics\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r._measurement == \"vankom_summary\")\n  |> filter(fn: (r) => r.gnb_host == \"${gnb}\")\n  |> filter(fn: (r) => r._field == \"alarms_history_count\")\n  |> last()",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "PAD3349F0AAE9DF1D"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [
+            {
+              "options": {
+                "1": {
+                  "color": "green",
+                  "text": "Activated"
+                },
+                "2": {
+                  "color": "yellow",
+                  "text": "Configured"
+                },
+                "8": {
+                  "color": "orange",
+                  "text": "Deleted"
+                },
+                "16": {
+                  "color": "blue",
+                  "text": "Activating"
+                }
+              },
+              "type": "value"
+            }
+          ]
+        }
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 18,
+        "y": 1
+      },
+      "id": 4,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        }
+      },
+      "title": "Cell Status",
+      "type": "stat",
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "PAD3349F0AAE9DF1D"
+          },
+          "query": "from(bucket: \"gnb_metrics\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r._measurement == \"vankom_summary\")\n  |> filter(fn: (r) => r.gnb_host == \"${gnb}\")\n  |> filter(fn: (r) => r._field == \"cell_status\")\n  |> last()",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "PAD3349F0AAE9DF1D"
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 24,
+        "x": 0,
+        "y": 5
+      },
+      "id": 5,
+      "title": "Parametros de red Vankom",
+      "type": "table",
+      "options": {
+        "showHeader": true
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "PAD3349F0AAE9DF1D"
+          },
+          "query": "from(bucket: \"gnb_metrics\")\n  |> range(start: -30m)\n  |> filter(fn: (r) => r._measurement == \"vankom_config\")\n  |> filter(fn: (r) => r.gnb_host == \"${gnb}\")\n  |> group(columns: [\"gnb_host\", \"target_name\", \"_field\"])\n  |> last()\n  |> pivot(rowKey: [\"gnb_host\", \"target_name\"], columnKey: [\"_field\"], valueColumn: \"_value\")",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "PAD3349F0AAE9DF1D"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "lineWidth": 2
+          }
+        }
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 11
+      },
+      "id": 6,
+      "options": {
+        "tooltip": {
+          "mode": "multi"
+        }
+      },
+      "title": "SINR / RSRP",
+      "type": "timeseries",
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "PAD3349F0AAE9DF1D"
+          },
+          "query": "from(bucket: \"gnb_metrics\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r._measurement == \"vankom_online_user\")\n  |> filter(fn: (r) => r.gnb_host == \"${gnb}\")\n  |> filter(fn: (r) => r._field == \"sinr\" or r._field == \"rsrp\")\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "PAD3349F0AAE9DF1D"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "Mbps",
+          "custom": {
+            "lineWidth": 2
+          }
+        }
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 11
+      },
+      "id": 7,
+      "options": {
+        "tooltip": {
+          "mode": "multi"
+        }
+      },
+      "title": "DL/UL MBR",
+      "type": "timeseries",
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "PAD3349F0AAE9DF1D"
+          },
+          "query": "from(bucket: \"gnb_metrics\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r._measurement == \"vankom_summary\")\n  |> filter(fn: (r) => r.gnb_host == \"${gnb}\")\n  |> filter(fn: (r) => r._field == \"dl_mbr_mbps\" or r._field == \"ul_mbr_mbps\")\n  |> aggregateWindow(every: v.windowPeriod, fn: last, createEmpty: false)",
+          "refId": "A"
+        }
+      ]
+    }
+  ],
+  "refresh": "20s",
+  "schemaVersion": 38,
+  "tags": [
+    "vankom",
+    "gnb",
+    "5g"
+  ],
+  "templating": {
+    "list": [
+      {
+        "current": {},
+        "datasource": {
+          "type": "influxdb",
+          "uid": "PAD3349F0AAE9DF1D"
+        },
+        "definition": "import \"influxdata/influxdb/schema\"\nschema.tagValues(bucket: \"gnb_metrics\", tag: \"gnb_host\", predicate: (r) => r._measurement == \"vankom_summary\", start: -30d)",
+        "hide": 0,
+        "includeAll": false,
+        "label": "GNB",
+        "multi": false,
+        "name": "gnb",
+        "options": [],
+        "query": "import \"influxdata/influxdb/schema\"\nschema.tagValues(bucket: \"gnb_metrics\", tag: \"gnb_host\", predicate: (r) => r._measurement == \"vankom_summary\", start: -30d)",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 1,
+        "type": "query"
+      }
+    ]
+  },
+  "time": {
+    "from": "now-1h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "Vankom gNB Monitor",
+  "uid": "vankom-gnb-001",
+  "version": 2
+}
